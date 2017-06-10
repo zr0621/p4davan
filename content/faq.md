@@ -10,11 +10,18 @@ keywords = ["FAQ","How do I","questions","what if"]
 * @author: 荒野无灯
 * @date: 2017-05-12
 
-## 0. adbyby 或 koolproxy的enable 按钮为何是灰色的？
+## 0.这个固件的默认管理员用户名和密码是什么
+`admin\admin`is a default credentials for WebUI and SSH.
+
+`1234567890` is a default password for Wi-Fi.
+
+更多信息，请移步 https://bitbucket.org/padavan/rt-n56u/wiki/EN/FAQ#markdown-header-i-cant-get-webui-access-how-to-reset-it
+
+## 1. adbyby 或 koolproxy的enable 按钮为何是灰色的？
 
 answer: 大哥，adbyby 和 koolproxy 不能同时启用。。。
 
-## 1. 如何通过命令快速切换$$
+## 2. 如何通过命令快速切换$$
 使用场景：某些免费的$$会定期更换密钥，或者想自己写脚本检测出最快的服务器，然后瞬间切换，而不是用固件默认的主从切换。
 
 yzqianf：
@@ -27,8 +34,9 @@ yzqianf：
 answer:
 对于你的情况，服务器节点应该不是在路由器UI里添加的，你想动态改变，用如下方式即可：
 
-#首先，设置将要切换的服务器的信息
-#加密方法，可查看 `http://192.168.2.1/Advanced_Extensions_SS_Node.asp` HTML 源码获得,如 rc4-md5 的值是3
+首先，设置将要切换的服务器的信息
+加密方法，可查看 `http://192.168.2.1/Advanced_Extensions_SS_Node.asp` HTML 源码获得,
+如 rc4-md5 的值是3
 
 ```bash
 nvram set ss_node_method_x0=3
@@ -41,7 +49,7 @@ nvram set shadowsocks_master_config=0
 restart_ss
 ```
 
-## 2. $$ 老是自动重启怎么回一？
+## 3. $$ 老是自动重启怎么回事？
 
 answer: 固件的$$服务有一项故障检测功能，当在一分钟之内连续检测到访问指定的站点10次失败，即会重启$$并切换主从配置.
 一般来说这个条件还是不是那么容易触发的。但是不排除某些人使用的是免费的$$，稳定性和速度没法保障。
