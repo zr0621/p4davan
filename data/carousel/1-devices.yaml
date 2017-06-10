@@ -1,4 +1,4 @@
-weight: 3
+weight: 1
 title: "适配5款路由器"
 description: >
   <ul class="list-style-none">
@@ -7,4 +7,4 @@ description: >
     <li>PSG1218-K2/PSG1218-K2-256M-RAM</li>
     <li>YOUKU-L1</li>
   </ul>
-image: "img/carousel/template-easy-customize.png"
+image: "img/carousel/multi-devices.png"
