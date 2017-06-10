@@ -13,7 +13,9 @@ googleAnalytics = ""
 paginate = 10
 
 pygmentsCodeFences = false
-pygmentsstyle = "autumn"
+pygmentsStyle = "autumn"
+
+hasCJKLanguage = true
 
 [menu]
 
@@ -123,7 +125,7 @@ pygmentsstyle = "autumn"
     longitude = "-77.028333"
 
     prismstyle = "default"
-    
+
 [Permalinks]
     blog = "/blog/:year/:month/:day/:filename/"
 
