@@ -4,39 +4,48 @@ description = "Frequently asked questions"
 keywords = ["FAQ","How do I","questions","what if"]
 +++
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+这里是常见问题解答,为避免互相伤害(浪费时间),遇到问题时我建议你确保以下FAQ都阅读过后再
+去向别人提问.
 
-## 1. WHAT TO DO IF I HAVE STILL NOT RECEIVED THE ORDER?
+* @author: 荒野无灯
+* @date: 2017-05-12
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+## 0. adbyby 或 koolproxy的enable 按钮为何是灰色的？
 
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
+answer: 大哥，adbyby 和 koolproxy 不能同时启用。。。
 
-## 2. WHAT ARE THE POSTAL RATES?
+## 1. 如何通过命令快速切换$$
+使用场景：某些免费的$$会定期更换密钥，或者想自己写脚本检测出最快的服务器，然后瞬间切换，而不是用固件默认的主从切换。
 
-Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+yzqianf：
+我在编一个SS Server的速度测试脚本,想请教快速切换SS的方法。我原用修改NVRAM中的信息 和 killall ss-redir ,
+等watchdog检测到SS故障后重启SS的方法,需等待十到二十秒，太慢了！
+我想改用killall ss-redir后，根据新配置运行ss-redir后用iptables(还是ipset?对端口转发命令不熟悉)。
+想请教切换到新的SS服务器上。
+望能指点！
 
-## 3. DO YOU SEND OVERSEAS?
+answer:
+对于你的情况，服务器节点应该不是在路由器UI里添加的，你想动态改变，用如下方式即可：
 
-Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+#首先，设置将要切换的服务器的信息
+#加密方法，可查看 `http://192.168.2.1/Advanced_Extensions_SS_Node.asp` HTML 源码获得,如 rc4-md5 的值是3
 
-## 4. WHY ARE YOU MORE EXPENSIVE THAN OTHERS?
+```bash
+nvram set ss_node_method_x0=3
+nvram set ss_node_password_x0=密码
+nvram set ss_node_server_port_x0=服务器端口
+nvram set ss_node_server_addr_x0=服务器地址
+#然后重启$$服务，即会自动使用此服务器
+nvram settmp ss_cur_config=0
+nvram set shadowsocks_master_config=0
+restart_ss
+```
 
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
+## 2. $$ 老是自动重启怎么回一？
 
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
-
-## 5. ANOTHER IMPORTANT QUESTION
-
-Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
-
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
+answer: 固件的$$服务有一项故障检测功能，当在一分钟之内连续检测到访问指定的站点10次失败，即会重启$$并切换主从配置.
+一般来说这个条件还是不是那么容易触发的。但是不排除某些人使用的是免费的$$，稳定性和速度没法保障。
+你有两个选择：其一是关闭Status Detection， 其二是，花占钱购买一个好点的$$吧。
 
 ---
 

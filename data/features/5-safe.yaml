@@ -1,0 +1,4 @@
+weight: 5
+name: "安全"
+icon: "fa fa-envelope-o"
+description: "固件发布的时候同时会自动生成md5校验和rsa2048签名,不用担心固件是被别人篡改的"

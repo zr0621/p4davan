@@ -1,0 +1,4 @@
+weight: 1
+name: "高效"
+icon: "fa fa-desktop"
+description: "绝大部分功能采用C语言实现,执行效率极高."

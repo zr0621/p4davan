@@ -1,0 +1,45 @@
+<div class="container" id="support">
+
+    <div class="row">
+        <div class="col-md-8">
+
+            <section>
+
+                {{ .Content }}
+
+                {{ if isset .Site.Params "qq_group_qrcode" }}
+
+                <div class="heading">
+                  <h3>加群二维码</h3>
+                </div>
+
+                <div id="contact-message"></div>
+
+              <img src="{{ .Site.Params.qq_group_qrcode }}" alt="">
+
+
+                {{ end }}
+            </section>
+              </div>
+
+              <div class="col-md-8">
+            <section>
+
+                {{ if isset .Site.Params "qq_group_num" }}
+
+                <div class="heading">
+                  <h3>QQ 群号</h3>
+                </div>
+
+                <div id="contact-message"></div>
+
+                <h2>{{ .Site.Params.qq_group_num }}</h2>
+                {{ end }}
+            </section>
+
+
+        </div>
+
+    </div>
+    <!-- /.row -->
+</div>

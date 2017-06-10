@@ -22,6 +22,11 @@ paginate = 10
     weight = 1
 
 [[menu.main]]
+    name = "Download"
+    url  = "/download/"
+    weight = 2
+
+[[menu.main]]
     name = "Blog"
     url  = "/blog/"
     weight = 2
@@ -33,8 +38,8 @@ paginate = 10
     weight = 3
 
 [[menu.main]]
-    name = "Contact"
-    url  = "/contact/"
+    name = "Support"
+    url  = "/support/"
     weight = 4
 
 # Top bar social links menu
@@ -42,35 +47,36 @@ paginate = 10
 [[menu.topbar]]
     weight = 1
     name = "GitHub"
-    url = "https://github.com/devcows/hugo-universal-theme"
+    url = "https://github.com/ihacklog/p4davan-fw"
     pre = "<i class='fa fa-2x fa-github'></i>"
 
 [[menu.topbar]]
     weight = 2
-    name = "Facebook"
-    url = "http://facebook.com"
-    pre = "<i class='fa fa-2x fa-facebook'></i>"
-
-[[menu.topbar]]
-    weight = 3
     name = "Twitter"
     url = "http://twitter.com"
     pre = "<i class='fa fa-2x fa-twitter'></i>"
 
 [[menu.topbar]]
+    weight = 3
+    name = "Mirror1"
+    url = "http://router.mirror1.80x86.io:8088/"
+    pre = "<i class='fa fa-2x fa-folder-open'></i>"
+
+
+[[menu.topbar]]
     weight = 4
-    name = "Email"
-    url = "mailto:your@email.com"
-    pre = "<i class='fa fa-2x fa-envelope'></i>"
+    name = "Mirror2"
+    url = "http://files.80x86.io/router/rom/"
+    pre = "<i class='fa fa-2x fa-folder-open'></i>"
 
 [params]
     viewMorePostLink = "/blog/"
-    author = "DevCows"
+    author = "荒野无灯"
     defaultKeywords = ["devows", "hugo", "go"]
     defaultDescription = "Site template made by devcows using hugo"
 
     # Google Maps API key (if not set will default to not passing a key.)
-    googleMapsApiKey = "AIzaSyCFhtWLJcE30xOAjcbSFi-0fnoVmQZPb1Y"
+    googleMapsApiKey = ""
 
     # Style options: default (light-blue), blue, green, marsala, pink, red, turquoise, violet
     style = "default"
@@ -90,13 +96,17 @@ paginate = 10
     # Enable the contact form by entering your Formspree.io email
     email = "your@email.com"
 
+    qq_group_qrcode = "http://tool.oschina.net/action/qrcode/generate?data=http%3A%2F%2Fjq.qq.com%2F%3F_wv%3D1027%26k%3D2J5myxG&output=image%2Fpng&error=H&type=0&margin=0&size=4"
+
+    qq_group_num  = "93780191"
+
     about_us = "<p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>"
-    copyright = "Copyright (c) 2015 - 2016, YourCompany; all rights reserved."
+    copyright = "Copyright (c) 2016 - 2017, 荒野无灯; all rights reserved."
 
     # Format dates with Go's time formatting
     date_format = "January 2, 2006"
 
-    logo = "img/logo.png"
+    logo = "img/asus_logo.png"
     address = """<p><strong>Universal Ltd.</strong>
         <br>13/25 New Avenue
         <br>Newtown upon River
@@ -115,10 +125,7 @@ paginate = 10
 # Enable or disable top bar with social icons
 [params.topbar]
     enable = true
-    text = """<p class="hidden-sm hidden-xs">Contact us on +420 777 555 333 or hello@universal.com.</p>
-      <p class="hidden-md hidden-lg"><a href="#" data-animate-hover="pulse"><i class="fa fa-phone"></i></a>
-      <a href="#" data-animate-hover="pulse"><i class="fa fa-envelope"></i></a>
-      </p>
+    text = """<p class="hidden-sm hidden-xs"><a href="https://bitbucket.org/padavan/rt-n56u" target="_blank">padavan</a> firmware mod by 荒野无灯.</p>
       """
 
 # Enable and disable widgets for the right sidebar
@@ -150,17 +157,17 @@ paginate = 10
 [params.see_more]
     enable = true
     icon = "fa fa-file-code-o"
-    title = "Do you want to see more?"
-    subtitle = "We have prepared for you more than 40 different HTML pages, including 5 variations of homepage."
-    link_url = "#"
-    link_text = "Check other homepages"
+    title = "想了解更多固件的使用技巧?"
+    subtitle = "点击这里查看文章吧"
+    link_url = "/blog"
+    link_text = "查看博客"
 
 [params.clients]
     enable = true
     # All clients are defined in their own files. You can find example items
     # at 'exampleSite/data/clients'.
     # For more informtion take a look at the README.
-    title = "Our Clients"
+    title = "Extension Integrated"
     subtitle = ""
 
 [params.recent_posts]

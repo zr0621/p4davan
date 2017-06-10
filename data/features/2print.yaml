@@ -1,0 +1,4 @@
+weight: 2
+name: "稳定"
+icon: "fa fa-print"
+description: "基于padavan官方源码,只增加少量必须插件.所有插件均与padavan原系统深度集成,各模块之间完美搭配."
