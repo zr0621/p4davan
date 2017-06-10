@@ -9,11 +9,9 @@
 
                 {{ if isset .Site.Params "qq_group_qrcode" }}
 
-                <div class="heading">
+                <div class="heading" style="margin: 20px 0;">
                   <h3>加群二维码</h3>
                 </div>
-
-                <div id="contact-message"></div>
 
               <img src="{{ .Site.Params.qq_group_qrcode }}" alt="">
 
@@ -22,17 +20,14 @@
             </section>
               </div>
 
-              <div class="col-md-8">
-            <section>
+              <div class="col-md-8" style="margin: 20px 0;">
+                <section>
 
                 {{ if isset .Site.Params "qq_group_num" }}
 
                 <div class="heading">
                   <h3>QQ 群号</h3>
                 </div>
-
-                <div id="contact-message"></div>
-
                 <h2>{{ .Site.Params.qq_group_num }}</h2>
                 {{ end }}
             </section>

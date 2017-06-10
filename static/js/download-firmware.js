@@ -28,7 +28,7 @@ var get_base_url = function(mirror_id) {
   var y1_ver = '';
   var k2_ver = '';
   var get_rom_release=function(product_id) {
-    $.get('/docs/release/' + product_id + '.txt', function(version){
+    $.get('/firmware/release/' + product_id + '.txt', function(version){
       $btn = $('#'+product_id);
       $btn.attr('title', version);
       $btn.bind('click', function(){

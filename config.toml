@@ -1,3 +1,4 @@
+publishDir = "docs"
 baseURL = "http://p4davan.80x86.io/"
 title = "padavan firmware mod by 荒野无灯"
 theme =  "hugo-universal-theme"
