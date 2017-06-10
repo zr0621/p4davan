@@ -3,7 +3,7 @@ title = "2017-06-10 固件 changelog"
 date = "2017-06-10T22:44:35+08:00"
 tags = ["firmware", "update"]
 categories = ["padavan"]
-banner = "img/banners/banner-1.jpg"
+banner = "img/banners/kuaishangche.jpg"
 +++
 
 ## 终于又迎来了一大波更新
