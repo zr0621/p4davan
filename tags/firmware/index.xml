@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firmware on padavan firmware mod by 荒野无灯</title>
+    <link>http://p4davan.80x86.io/tags/firmware/</link>
+    <description>Recent content in Firmware on padavan firmware mod by 荒野无灯</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2016 - 2017, 荒野无灯; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 10 Jun 2017 22:44:35 +0800</lastBuildDate>
+    
+	<atom:link href="http://p4davan.80x86.io/tags/firmware/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2017-06-10 固件 changelog</title>
+      <link>http://p4davan.80x86.io/blog/2017/06/10/firmware-changelog-20170610/</link>
+      <pubDate>Sat, 10 Jun 2017 22:44:35 +0800</pubDate>
+      
+      <guid>http://p4davan.80x86.io/blog/2017/06/10/firmware-changelog-20170610/</guid>
+      <description>终于又迎来了一大波更新 五机齐发(D1,Y1,L1,K2,K2_256),准备开刷 虽然说是beta,不过在此之前群主已经测试多次.不出意外这就是正式版. 尝鲜下载地址: http://router.mirror1.80x86.io:8088/beta/?C=S&amp;amp;O=D
+2017-06-10 changelog:
+ 同步更新到padavan最新官方源码. 修复 CVE-2017-7494安全漏洞(典型应用:WanaCrypt0r) @see https://nvd.nist.gov/vuln/detail/CVE-2017-7494 koolproxy 更新到 3.5.9.1 (@see http://koolshare.cn/thread-64086-1-1.html) 据kp更新日志:为了提升速度，内存管理更换为jemalloc，内存管理更有效，内存占用可能会比之前版本更多一些 wifi: 启用 802.11r 协议(暂时没找到应用方法) 迅雷离线: 支持自定义package下载地址. aria2 更新到最新的 1.32.0 (@see https://github.com/aria2/aria2/releases/tag/release-1.32.0) $$-libev: upgrade to Commits on Jun 9, 2017 simple-obfs: upgrade to 0.0.3-1 xkcptun: upgrade to Commits on Jun 9, 2017 dnsmasq 更新至最新的 2.77 (@see http://www.thekelleys.org.uk/dnsmasq/CHANGELOG) PSG1218-K2 , PSG1218-K2-256M: fix LED problem.(back to purple) 增加 curl 7.54.0 (K2 8M固件没有) transmission 升级到最新版 2.</description>
+    </item>
+    
+  </channel>
+</rss>

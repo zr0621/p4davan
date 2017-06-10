@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on padavan firmware mod by 荒野无灯</title>
+    <link>http://p4davan.80x86.io/tags/</link>
+    <description>Recent content in Tags on padavan firmware mod by 荒野无灯</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2016 - 2017, 荒野无灯; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 10 Jun 2017 22:44:35 +0800</lastBuildDate>
+    
+	<atom:link href="http://p4davan.80x86.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Firmware</title>
+      <link>http://p4davan.80x86.io/tags/firmware/</link>
+      <pubDate>Sat, 10 Jun 2017 22:44:35 +0800</pubDate>
+      
+      <guid>http://p4davan.80x86.io/tags/firmware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Go</title>
+      <link>http://p4davan.80x86.io/tags/go/</link>
+      <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>http://p4davan.80x86.io/tags/golang/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>http://p4davan.80x86.io/tags/hugo/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ipsum</title>
+      <link>http://p4davan.80x86.io/tags/ipsum/</link>
+      <pubDate>Sat, 10 Oct 2015 13:07:31 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/tags/ipsum/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Programming</title>
+      <link>http://p4davan.80x86.io/tags/programming/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/tags/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Theme</title>
+      <link>http://p4davan.80x86.io/tags/theme/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/tags/theme/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Update</title>
+      <link>http://p4davan.80x86.io/tags/update/</link>
+      <pubDate>Sat, 10 Jun 2017 22:44:35 +0800</pubDate>
+      
+      <guid>http://p4davan.80x86.io/tags/update/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

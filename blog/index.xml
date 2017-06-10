@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on padavan firmware mod by 荒野无灯</title>
+    <link>http://p4davan.80x86.io/blog/</link>
+    <description>Recent content in Blogs on padavan firmware mod by 荒野无灯</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2016 - 2017, 荒野无灯; all rights reserved.</copyright>
+    <lastBuildDate>Sat, 10 Jun 2017 22:44:35 +0800</lastBuildDate>
+    
+	<atom:link href="http://p4davan.80x86.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2017-06-10 固件 changelog</title>
+      <link>http://p4davan.80x86.io/blog/2017/06/10/firmware-changelog-20170610/</link>
+      <pubDate>Sat, 10 Jun 2017 22:44:35 +0800</pubDate>
+      
+      <guid>http://p4davan.80x86.io/blog/2017/06/10/firmware-changelog-20170610/</guid>
+      <description>终于又迎来了一大波更新 五机齐发(D1,Y1,L1,K2,K2_256),准备开刷 虽然说是beta,不过在此之前群主已经测试多次.不出意外这就是正式版. 尝鲜下载地址: http://router.mirror1.80x86.io:8088/beta/?C=S&amp;amp;O=D
+2017-06-10 changelog:
+ 同步更新到padavan最新官方源码. 修复 CVE-2017-7494安全漏洞(典型应用:WanaCrypt0r) @see https://nvd.nist.gov/vuln/detail/CVE-2017-7494 koolproxy 更新到 3.5.9.1 (@see http://koolshare.cn/thread-64086-1-1.html) 据kp更新日志:为了提升速度，内存管理更换为jemalloc，内存管理更有效，内存占用可能会比之前版本更多一些 wifi: 启用 802.11r 协议(暂时没找到应用方法) 迅雷离线: 支持自定义package下载地址. aria2 更新到最新的 1.32.0 (@see https://github.com/aria2/aria2/releases/tag/release-1.32.0) $$-libev: upgrade to Commits on Jun 9, 2017 simple-obfs: upgrade to 0.0.3-1 xkcptun: upgrade to Commits on Jun 9, 2017 dnsmasq 更新至最新的 2.77 (@see http://www.thekelleys.org.uk/dnsmasq/CHANGELOG) PSG1218-K2 , PSG1218-K2-256M: fix LED problem.(back to purple) 增加 curl 7.54.0 (K2 8M固件没有) transmission 升级到最新版 2.</description>
+    </item>
+    
+    <item>
+      <title>Migrate from Jekyll</title>
+      <link>http://p4davan.80x86.io/blog/2015/10/10/migrate-from-jekyll/</link>
+      <pubDate>Sat, 10 Oct 2015 13:07:31 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/blog/2015/10/10/migrate-from-jekyll/</guid>
+      <description>Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
+▾ &amp;lt;root&amp;gt;/ ▾ images/ logo.png  should become
+▾ &amp;lt;root&amp;gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&amp;rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</description>
+    </item>
+    
+    <item>
+      <title>Linked post</title>
+      <link>http://p4davan.80x86.io/blog/2015/10/02/linked-post/</link>
+      <pubDate>Fri, 02 Oct 2015 21:49:20 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/blog/2015/10/02/linked-post/</guid>
+      <description>I&amp;rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
+menu = &amp;quot;main&amp;quot;  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus.</description>
+    </item>
+    
+    <item>
+      <title>Go is for lovers</title>
+      <link>http://p4davan.80x86.io/blog/2015/09/17/go-is-for-lovers/</link>
+      <pubDate>Thu, 17 Sep 2015 13:47:08 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/blog/2015/09/17/go-is-for-lovers/</guid>
+      <description>Hugo uses the excellent go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in go templates.
+This document is a brief primer on using go templates.</description>
+    </item>
+    
+    <item>
+      <title>Hugo is for lovers</title>
+      <link>http://p4davan.80x86.io/blog/2015/08/03/hugo-is-for-lovers/</link>
+      <pubDate>Mon, 03 Aug 2015 13:39:46 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/blog/2015/08/03/hugo-is-for-lovers/</guid>
+      <description>Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
+Save it somewhere specific as we will be using it in the next step.
+More complete instructions are available at installing hugo
+Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
+Follow the following steps:
+ Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+    </item>
+    
+    <item>
+      <title>Creating a new theme</title>
+      <link>http://p4davan.80x86.io/blog/2015/06/24/creating-a-new-theme/</link>
+      <pubDate>Wed, 24 Jun 2015 13:50:46 +0200</pubDate>
+      
+      <guid>http://p4davan.80x86.io/blog/2015/06/24/creating-a-new-theme/</guid>
+      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
+We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+    </item>
+    
+  </channel>
+</rss>
