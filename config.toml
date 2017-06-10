@@ -12,6 +12,9 @@ googleAnalytics = ""
 # Define the number of posts per page
 paginate = 10
 
+pygmentsCodeFences = false
+pygmentsstyle = "autumn"
+
 [menu]
 
 # Main menu
@@ -119,6 +122,8 @@ paginate = 10
     latitude = "-12.043333"
     longitude = "-77.028333"
 
+    prismstyle = "default"
+    
 [Permalinks]
     blog = "/blog/:year/:month/:day/:filename/"
 
