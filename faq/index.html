@@ -185,11 +185,19 @@
 <li>@date: 2017-05-12</li>
 </ul>
 
-<h2 id="0-adbyby-或-koolproxy的enable-按钮为何是灰色的">0. adbyby 或 koolproxy的enable 按钮为何是灰色的？</h2>
+<h2 id="0-这个固件的默认管理员用户名和密码是什么">0.这个固件的默认管理员用户名和密码是什么</h2>
+
+<p><code>admin\admin</code>is a default credentials for WebUI and SSH.</p>
+
+<p><code>1234567890</code> is a default password for Wi-Fi.</p>
+
+<p>更多信息，请移步 <a href="https://bitbucket.org/padavan/rt-n56u/wiki/EN/FAQ#markdown-header-i-cant-get-webui-access-how-to-reset-it">https://bitbucket.org/padavan/rt-n56u/wiki/EN/FAQ#markdown-header-i-cant-get-webui-access-how-to-reset-it</a></p>
+
+<h2 id="1-adbyby-或-koolproxy的enable-按钮为何是灰色的">1. adbyby 或 koolproxy的enable 按钮为何是灰色的？</h2>
 
 <p>answer: 大哥，adbyby 和 koolproxy 不能同时启用。。。</p>
 
-<h2 id="1-如何通过命令快速切换">1. 如何通过命令快速切换$$</h2>
+<h2 id="2-如何通过命令快速切换">2. 如何通过命令快速切换$$</h2>
 
 <p>使用场景：某些免费的$$会定期更换密钥，或者想自己写脚本检测出最快的服务器，然后瞬间切换，而不是用固件默认的主从切换。</p>
 
@@ -203,8 +211,9 @@
 <p>answer:
 对于你的情况，服务器节点应该不是在路由器UI里添加的，你想动态改变，用如下方式即可：</p>
 
-<p>#首先，设置将要切换的服务器的信息
-#加密方法，可查看 <code>http://192.168.2.1/Advanced_Extensions_SS_Node.asp</code> HTML 源码获得,如 rc4-md5 的值是3</p>
+<p>首先，设置将要切换的服务器的信息
+加密方法，可查看 <code>http://192.168.2.1/Advanced_Extensions_SS_Node.asp</code> HTML 源码获得,
+如 rc4-md5 的值是3</p>
 
 <pre><code class="language-bash">nvram set ss_node_method_x0=3
 nvram set ss_node_password_x0=密码
@@ -216,7 +225,7 @@ nvram set shadowsocks_master_config=0
 restart_ss
 </code></pre>
 
-<h2 id="2-老是自动重启怎么回一">2. $$ 老是自动重启怎么回一？</h2>
+<h2 id="3-老是自动重启怎么回事">3. $$ 老是自动重启怎么回事？</h2>
 
 <p>answer: 固件的$$服务有一项故障检测功能，当在一分钟之内连续检测到访问指定的站点10次失败，即会重启$$并切换主从配置.
 一般来说这个条件还是不是那么容易触发的。但是不排除某些人使用的是免费的$$，稳定性和速度没法保障。
