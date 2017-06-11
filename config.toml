@@ -17,6 +17,9 @@ pygmentsStyle = "autumn"
 
 hasCJKLanguage = true
 
+[blackfriday]
+#extensions = ["hardLineBreak"]
+
 [menu]
 
 # Main menu
