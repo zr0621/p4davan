@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Centos on Padavan Firmware Mod by 荒野无灯</title>
+    <link>http://p4davan.80x86.io/tags/centos/</link>
+    <description>Recent content in Centos on Padavan Firmware Mod by 荒野无灯</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>Copyright (c) 2016 - 2017, 荒野无灯; all rights reserved.</copyright>
+    <lastBuildDate>Sun, 11 Jun 2017 23:15:57 +0800</lastBuildDate>
+    
+	<atom:link href="http://p4davan.80x86.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>如何自己架设一个ngrok服务端</title>
+      <link>http://p4davan.80x86.io/blog/2017/06/11/how-to-setup-a-ngrok-server/</link>
+      <pubDate>Sun, 11 Jun 2017 23:15:57 +0800</pubDate>
+      
+      <guid>http://p4davan.80x86.io/blog/2017/06/11/how-to-setup-a-ngrok-server/</guid>
+      <description>本文以CentOS系统为例,其它Linux发行版也可参考. 首先你得有一个服务器或vps. 由于ngrok服务端实际上是一种代理的角色,因此,对</description>
+    </item>
+    
+  </channel>
+</rss>

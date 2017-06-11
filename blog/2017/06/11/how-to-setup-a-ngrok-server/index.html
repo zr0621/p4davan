@@ -6,7 +6,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Padavan</title>
+  <title>如何自己架设一个ngrok服务端</title>
   <meta name="author" content="" />
 
   
@@ -60,9 +60,9 @@
   <link rel="alternate" href="http://p4davan.80x86.io/index.xml" type="application/rss+xml" title="Padavan Firmware Mod by 荒野无灯">
 
   
-  <meta property="og:title" content="Padavan" />
+  <meta property="og:title" content="如何自己架设一个ngrok服务端" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/categories/padavan//" />
+  <meta property="og:url" content="/blog/2017/06/11/how-to-setup-a-ngrok-server//" />
   <meta property="og:image" content="img/asus_logo.png" />
 
 </head>
@@ -81,9 +81,9 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand home" href="http://p4davan.80x86.io/">
-                    <img src="http://p4davan.80x86.io/img/logo.png" alt="Padavan logo" class="hidden-xs hidden-sm">
-                    <img src="http://p4davan.80x86.io/img/logo-small.png" alt="Padavan logo" class="visible-xs visible-sm">
-                    <span class="sr-only">Padavan - go to homepage</span>
+                    <img src="http://p4davan.80x86.io/img/logo.png" alt="如何自己架设一个ngrok服务端 logo" class="hidden-xs hidden-sm">
+                    <img src="http://p4davan.80x86.io/img/logo-small.png" alt="如何自己架设一个ngrok服务端 logo" class="visible-xs visible-sm">
+                    <span class="sr-only">如何自己架设一个ngrok服务端 - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -162,7 +162,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Padavan</h1>
+                <h1>如何自己架设一个ngrok服务端</h1>
             </div>
         </div>
     </div>
@@ -171,125 +171,106 @@
 
         <div id="content">
             <div class="container">
+
                 <div class="row">
+
                     
 
-                    <div class="col-md-9" id="blog-listing-medium">
+                    <div class="col-md-9" id="blog-post">
 
+                        <p class="text-muted text-uppercase mb-small text-right">June 11, 2017</p>
+
+                        <div id="post-content">
+                          
+
+<p>本文以CentOS系统为例,其它Linux发行版也可参考.</p>
+
+<p>首先你得有一个服务器或vps.
+由于ngrok服务端实际上是一种代理的角色,因此,对于国内用户来说,
+国内服务器的速度会优于国外的.</p>
+
+<p>这里为什么git clone的是我mod版的ngrok?
+mod版主要是修复了默认监听ipv6 IP的问题,
+以及添加了对ngrok-libev 客户端的支持.</p>
+
+<h2 id="1-编译安装ngrok">1. 编译安装ngrok</h2>
+
+<p>ssh登录进服务器:</p>
+
+<pre><code class="language-bash">cd /opt/
+git clone https://github.com/ihacklog/ngrok.git
+cd ngrok
+chmod a+x gen-ssl.sh
+#编辑gen-ssl.sh 把 YOUR-TUNEL-DOMAIN 换成你自己的域名,如 t.abc.com
+vim gen-ssl.sh
+#生成自签名ssl证书
+./gen-ssl.sh
+</code></pre>
+
+<p>开始编译:</p>
+
+<pre><code class="language-bash"># 没有安装go的先安装一下go环境:
+dnf install -y go
+# 或 yum install -y go
+make release-server release-client
+# 如果不出意外,你应该可以看到编译好的文件, ls bin 看看
+</code></pre>
+
+<h2 id="2-安装并启动服务">2. 安装并启动服务</h2>
+
+<p>CentOS 7用户看这里:</p>
+
+<pre><code class="language-bash">#如果是centos 7, 把systemd的服务文件copy到相应目录:
+cp ngrokd.service /usr/lib/systemd/system
+#编辑文件,把 YOUR-TUNEL-DOMAIN 更改为你自己的域名,如 t.abc.com
+#如果需要调整,端口把默认的:80 和  :443 改成你想要的端口即可
+vim /usr/lib/systemd/system/ngrokd.service
+# 开启服务
+systemctl enable ngrokd
+# 启动服务
+systemctl start ngrokd
+# 查看一下是否显示正在运行(running)
+systemctl status ngrokd
+</code></pre>
+
+<p>CentOS 6用户看这里:</p>
+
+<pre><code class="language-bash"># 如果是centos 6.x 请按下面的操作添加服务
+cp ngrokd.sh /etc/init.d/ngrokd
+#编辑文件,把 YOUR-TUNEL-DOMAIN 更改为你自己的域名,如 t.abc.com
+vim /etc/init.d/ngrokd
+#如果提示没有chkconfig 安装一下即可
+chkconfig ngrokd on
+#启动服务, 如果提示没有nohup ,安装一下即可
+/etc/init.d/ngrokd start
+#查看状态
+/etc/init.d/ngrokd status
+</code></pre>
+
+<p>&ndash;EOF</p>
+
+                        </div>
                         
                         
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <div class="image">
-                                      <a href="http://p4davan.80x86.io/blog/2017/06/11/koolproxy-rules-update-problem/">
-                                          
-                                          <img src="http://p4davan.80x86.io/img/banners/tanke-fanche.jpg" class="img-responsive" alt="">
-                                          
-                                      </a>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="http://p4davan.80x86.io/blog/2017/06/11/koolproxy-rules-update-problem/">为什么我的koolproxy规则不能自动更新</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          
-                                          
-                                          
-                                          in <a href="http://p4davan.80x86.io/categories/padavan">padavan</a>
-                                          
-                                          
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'p4davan';
+    var disqus_identifier = 'http:\/\/p4davan.80x86.io\/blog\/2017\/06\/11\/how-to-setup-a-ngrok-server\/';
+    var disqus_title = '如何自己架设一个ngrok服务端';
+    var disqus_url = 'http:\/\/p4davan.80x86.io\/blog\/2017\/06\/11\/how-to-setup-a-ngrok-server\/';
 
-                                        </p>
-                                        <p class="date-comments">
-                                            <a href="http://p4davan.80x86.io/blog/2017/06/11/koolproxy-rules-update-problem/"><i class="fa fa-calendar-o"></i> June 11, 2017</a>
-                                        </p>
-                                    </div>
-                                    <p class="intro">默认情况下,kp 会自动检测和更新规则的.然而现实确总是不如理想中那么美好. 有部分朋友反馈说不能更新.为避免一一回复浪费彼此的时候.我想是时候</p>
-                                    <p class="read-more"><a href="http://p4davan.80x86.io/blog/2017/06/11/koolproxy-rules-update-problem/" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-                        
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <div class="image">
-                                      <a href="http://p4davan.80x86.io/blog/2017/06/11/how-to-debug-ss-problem/">
-                                          
-                                          <img src="http://p4davan.80x86.io/img/banners/finding-solutions.jpg" class="img-responsive" alt="">
-                                          
-                                      </a>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="http://p4davan.80x86.io/blog/2017/06/11/how-to-debug-ss-problem/">ss不工作怎么排查问题</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          
-                                          
-                                          
-                                          in <a href="http://p4davan.80x86.io/categories/padavan">padavan</a>
-                                          
-                                          
-
-                                        </p>
-                                        <p class="date-comments">
-                                            <a href="http://p4davan.80x86.io/blog/2017/06/11/how-to-debug-ss-problem/"><i class="fa fa-calendar-o"></i> June 11, 2017</a>
-                                        </p>
-                                    </div>
-                                    <p class="intro">0.不能正常工作的具体表现 在开启了Status Detection的情况下,Active SS Node那里没有显示绿色的字样:Working 查看插</p>
-                                    <p class="read-more"><a href="http://p4davan.80x86.io/blog/2017/06/11/how-to-debug-ss-problem/" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-                        
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <div class="image">
-                                      <a href="http://p4davan.80x86.io/blog/2017/06/10/firmware-changelog-20170610/">
-                                          
-                                          <img src="http://p4davan.80x86.io/img/banners/kuaishangche.jpg" class="img-responsive" alt="">
-                                          
-                                      </a>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="http://p4davan.80x86.io/blog/2017/06/10/firmware-changelog-20170610/">2017-06-10 固件 changelog</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          
-                                          
-                                          
-                                          in <a href="http://p4davan.80x86.io/categories/padavan">padavan</a>
-                                          
-                                          
-
-                                        </p>
-                                        <p class="date-comments">
-                                            <a href="http://p4davan.80x86.io/blog/2017/06/10/firmware-changelog-20170610/"><i class="fa fa-calendar-o"></i> June 10, 2017</a>
-                                        </p>
-                                    </div>
-                                    <p class="intro">终于又迎来了一大波更新 五机齐发(D1,Y1,L1,K2,K2_256),准备开刷 虽然说是beta,不过在此之前群主已经测试多次.不出意外这就</p>
-                                    <p class="read-more"><a href="http://p4davan.80x86.io/blog/2017/06/10/firmware-changelog-20170610/" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
                         
 
-                        <ul class="pager">
-                            
-                            <li class="previous disabled"><a href="#">&larr; Newer</a></li>
-                            
-
-                            
-                            <li class="next disabled"><a href="#">Older &rarr;</a></li>
-                            
-                        </ul>
                     </div>
                     
 
@@ -440,6 +421,7 @@
 
                 </div>
                 
+
             </div>
             
         </div>

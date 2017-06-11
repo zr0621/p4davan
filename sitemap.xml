@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://p4davan.80x86.io/blog/2017/06/11/how-to-setup-a-ngrok-server/</loc>
+    <lastmod>2017-06-11T23:15:57+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://p4davan.80x86.io/blog/2017/06/11/remote-support/</loc>
     <lastmod>2017-06-11T21:09:24+08:00</lastmod>
   </url>
@@ -49,12 +54,18 @@
   
   <url>
     <loc>http://p4davan.80x86.io/blog/</loc>
-    <lastmod>2017-06-11T21:09:24+08:00</lastmod>
+    <lastmod>2017-06-11T23:15:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://p4davan.80x86.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://p4davan.80x86.io/tags/centos/</loc>
+    <lastmod>2017-06-11T23:15:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -117,6 +128,12 @@
   </url>
   
   <url>
+    <loc>http://p4davan.80x86.io/tags/ngrok/</loc>
+    <lastmod>2017-06-11T23:15:57+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://p4davan.80x86.io/categories/padavan/</loc>
     <lastmod>2017-06-11T17:32:15+08:00</lastmod>
     <priority>0</priority>
@@ -124,7 +141,7 @@
   
   <url>
     <loc>http://p4davan.80x86.io/</loc>
-    <lastmod>2017-06-11T21:09:24+08:00</lastmod>
+    <lastmod>2017-06-11T23:15:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -135,13 +152,13 @@
   </url>
   
   <url>
-    <loc>http://p4davan.80x86.io/tags/programming/</loc>
+    <loc>http://p4davan.80x86.io/categories/programming/</loc>
     <lastmod>2015-10-02T21:49:20+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://p4davan.80x86.io/categories/programming/</loc>
+    <loc>http://p4davan.80x86.io/tags/programming/</loc>
     <lastmod>2015-10-02T21:49:20+02:00</lastmod>
     <priority>0</priority>
   </url>
@@ -172,13 +189,19 @@
   
   <url>
     <loc>http://p4davan.80x86.io/tags/</loc>
-    <lastmod>2017-06-11T17:32:15+08:00</lastmod>
+    <lastmod>2017-06-11T23:15:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://p4davan.80x86.io/tags/theme/</loc>
     <lastmod>2015-10-02T21:49:20+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://p4davan.80x86.io/categories/tuts/</loc>
+    <lastmod>2017-06-11T23:15:57+08:00</lastmod>
     <priority>0</priority>
   </url>
   
