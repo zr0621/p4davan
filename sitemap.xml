@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://p4davan.80x86.io/blog/2017/06/11/how-to-debug-ss-problem/</loc>
+    <lastmod>2017-06-11T16:30:53+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://p4davan.80x86.io/blog/2017/06/10/firmware-changelog-20170610/</loc>
     <lastmod>2017-06-10T22:44:35+08:00</lastmod>
   </url>
@@ -34,7 +39,7 @@
   
   <url>
     <loc>http://p4davan.80x86.io/blog/</loc>
-    <lastmod>2017-06-10T22:44:35+08:00</lastmod>
+    <lastmod>2017-06-11T16:30:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -85,13 +90,13 @@
   
   <url>
     <loc>http://p4davan.80x86.io/categories/padavan/</loc>
-    <lastmod>2017-06-10T22:44:35+08:00</lastmod>
+    <lastmod>2017-06-11T16:30:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>http://p4davan.80x86.io/</loc>
-    <lastmod>2017-06-10T22:44:35+08:00</lastmod>
+    <lastmod>2017-06-11T16:30:53+08:00</lastmod>
     <priority>0</priority>
   </url>
   
