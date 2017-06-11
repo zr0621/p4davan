@@ -3,7 +3,7 @@ categories = ["padavan"]
 date = "2017-06-11T17:32:15+08:00"
 tags = ["koolproxy", "problem", "debug"]
 title = "为什么我的koolproxy规则不能自动更新"
-banner = "img/banners/kuaishangche.jpg"
+banner = "img/banners/tanke-fanche.jpg"
 +++
 
 默认情况下,kp 会自动检测和更新规则的.然而现实确总是不如理想中那么美好.

@@ -3,7 +3,7 @@ title = "ss不工作怎么排查问题"
 date = "2017-06-11T16:30:53+08:00"
 tags = ["ss", "problem", "debug"]
 categories = ["padavan"]
-banner = "img/banners/kuaishangche.jpg"
+banner = "img/banners/finding-solutions.jpg"
 +++
 
 ## 0.不能正常工作的具体表现
