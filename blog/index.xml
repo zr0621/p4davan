@@ -18,7 +18,7 @@
       <pubDate>Sun, 11 Jun 2017 23:15:57 +0800</pubDate>
       
       <guid>http://p4davan.80x86.io/blog/2017/06/11/how-to-setup-a-ngrok-server/</guid>
-      <description>本文以CentOS系统为例,其它Linux发行版也可参考. 首先你得有一个服务器或vps. 由于ngrok服务端实际上是一种代理的角色,因此,对</description>
+      <description>前言 用过我MOD版的固件的都会发现, 在ngrok那里有两个程序可以切换,一个是ngrok-c, 另一个是ngrok-libev. 从实际使用来看</description>
     </item>
     
     <item>
