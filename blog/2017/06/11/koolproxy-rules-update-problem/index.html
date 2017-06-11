@@ -6,7 +6,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hugo</title>
+  <title>为什么我的koolproxy规则不能自动更新</title>
   <meta name="author" content="" />
 
   
@@ -60,9 +60,9 @@
   <link rel="alternate" href="http://p4davan.80x86.io/index.xml" type="application/rss+xml" title="Padavan Firmware Mod by 荒野无灯">
 
   
-  <meta property="og:title" content="Hugo" />
+  <meta property="og:title" content="为什么我的koolproxy规则不能自动更新" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/tags/hugo//" />
+  <meta property="og:url" content="/blog/2017/06/11/koolproxy-rules-update-problem//" />
   <meta property="og:image" content="img/asus_logo.png" />
 
 </head>
@@ -81,9 +81,9 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand home" href="http://p4davan.80x86.io/">
-                    <img src="http://p4davan.80x86.io/img/logo.png" alt="Hugo logo" class="hidden-xs hidden-sm">
-                    <img src="http://p4davan.80x86.io/img/logo-small.png" alt="Hugo logo" class="visible-xs visible-sm">
-                    <span class="sr-only">Hugo - go to homepage</span>
+                    <img src="http://p4davan.80x86.io/img/logo.png" alt="为什么我的koolproxy规则不能自动更新 logo" class="hidden-xs hidden-sm">
+                    <img src="http://p4davan.80x86.io/img/logo-small.png" alt="为什么我的koolproxy规则不能自动更新 logo" class="visible-xs visible-sm">
+                    <span class="sr-only">为什么我的koolproxy规则不能自动更新 - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -162,7 +162,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Hugo</h1>
+                <h1>为什么我的koolproxy规则不能自动更新</h1>
             </div>
         </div>
     </div>
@@ -171,99 +171,108 @@
 
         <div id="content">
             <div class="container">
+
                 <div class="row">
+
                     
 
-                    <div class="col-md-9" id="blog-listing-medium">
+                    <div class="col-md-9" id="blog-post">
 
+                        <p class="text-muted text-uppercase mb-small text-right">June 11, 2017</p>
+
+                        <div id="post-content">
+                          
+
+<p>默认情况下,kp 会自动检测和更新规则的.然而现实确总是不如理想中那么美好.
+有部分朋友反馈说不能更新.为避免一一回复浪费彼此的时候.我想是时候写个
+文章说明一下了.</p>
+
+<h2 id="检查网络原因">检查网络原因</h2>
+
+<p>在路由器里用命令手动下载规则试试,具体命令是:</p>
+
+<pre><code class="language-bash">cd /tmp/
+wget https://kprule.com/koolproxy.txt
+wget http://kprules.b0.upaiyun.com/koolproxy.txt.md5
+#首先确保 上面两个文件都正常下载了,然后 再执行下面的命令
+md5sum koolproxy.txt
+cat koolproxy.txt.md5
+#观察md5sum计算的结果,是不是和cat的一样,如果一样,恭喜你
+#你的网络完全正常.
+</code></pre>
+
+<h2 id="检查padavan-storage剩余空间是不是不够">检查padavan storage剩余空间是不是不够</h2>
+
+<p>通过shellinabox 或 xshell 或 ssh 登录进路由器shell,
+然后执行以下命令(#号右边的部分):</p>
+
+<pre><code class="language-bash">[A3004NS /opt/home/admin]# df -h | grep /etc
+Filesystem                Size      Used Available Use% Mounted o
+tmpfs                     4.0M      1.6M      2.4M  40% /etc
+</code></pre>
+
+<p>可以看到这个路由器的/etc有4M大小, 已经使用了1.6M了,剩余2.4M,
+这样的情况,是不是kp规则下载的空间完全就足够了,没有问题了呢?不一定.
+/etc有剩余,只是一个前提.</p>
+
+<p>在我的padavan固件中,/etc/storage/koolproxy/data/rules 是kp规则文件的保存目录,</p>
+
+<pre><code class="language-bash">[A3004NS /opt/home/admin]# cd /etc/storage/koolproxy/data/rules
+[A3004NS /etc/storage/koolproxy/data/rules]# rm koolproxy.txt
+[A3004NS /etc/storage/koolproxy/data/rules]# wget https://kprule.com/koolproxy.txt
+Connecting to kprule.com (221.229.173.116:443)
+Connecting to kprules.b0.upaiyun.com (59.38.102.194:443)
+koolproxy.txt        100% |**************************************************************************************************************|   465k  0:00:00 ETA
+[A3004NS /etc/storage/koolproxy/data/rules]# wget -O /tmp/koolproxy.txt.md5 http://kprules.b0.upaiyun.com/koolproxy.txt.md5
+Connecting to kprules.b0.upaiyun.com (59.38.102.194:80)
+koolproxy.txt.md5    100% |**************************************************************************************************************|    32   0:00:00 ETA
+[A3004NS /etc/storage/koolproxy/data/rules]# cat /tmp/koolproxy.txt.md5
+[A3004NS /etc/storage/koolproxy/data/rules]# cat /tmp/koolproxy.txt.md5
+5d7214c5b7e95f38690d547b07d085fd[A3004NS /etc/storage/koolproxy/data/rules]# md5sum koolproxy.txt
+5d7214c5b7e95f38690d547b07d085fd  koolproxy.txt
+</code></pre>
+
+<p>如果你的结果类似如上所示,cat md5文件的结果和md5sum 计算的结果一致,就说明空间也是足够的.
+否则, <code>wget https://kprule.com/koolproxy.txt</code> 提示保存失败的话,有可能是空间不足了.
+这个时候,你可以通过删除adbyby的数据来解决, 执行: <code>rm -rf /etc/storage/adb</code> 删除后再
+重试.</p>
+
+<h2 id="规则更新日期显示问题">规则更新日期显示问题</h2>
+
+<p>由于设计的时候,默认是kp服务重启后再更新日期显示的.
+但是kp自己检测到有规则更新,自动更新后会重启kp自己,但是不是重启kp服务,
+因此在UI界面显示的更新日期很可能还是上一次的数据,解决办法很简单:
+关闭kp,再打开kp (以后统称重启kp服务)即可.
+或者在cron那里增加一条配置(新版本的固件默认就有了,如果注释了,去掉开头的#即可,
+不用重复添加):</p>
+
+<pre><code>0 */12 * * *     /sbin/restart_koolproxy
+</code></pre>
+
+<p>这个配置的意思是每隔12个小时重启一次kp服务.</p>
+
+                        </div>
                         
                         
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <div class="image">
-                                      <a href="http://p4davan.80x86.io/blog/2015/10/02/linked-post/">
-                                          
-                                          <img src="http://p4davan.80x86.io/img/banners/banner-4.jpg" class="img-responsive" alt="">
-                                          
-                                      </a>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="http://p4davan.80x86.io/blog/2015/10/02/linked-post/">Linked post</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          
-                                          By <a href="#">John Doe</a>
-                                          
-                                          
-                                          
-                                          in <a href="http://p4davan.80x86.io/categories/programming">programming</a>
-                                          
-                                          
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'p4davan';
+    var disqus_identifier = 'http:\/\/p4davan.80x86.io\/blog\/2017\/06\/11\/koolproxy-rules-update-problem\/';
+    var disqus_title = '为什么我的koolproxy规则不能自动更新';
+    var disqus_url = 'http:\/\/p4davan.80x86.io\/blog\/2017\/06\/11\/koolproxy-rules-update-problem\/';
 
-                                        </p>
-                                        <p class="date-comments">
-                                            <a href="http://p4davan.80x86.io/blog/2015/10/02/linked-post/"><i class="fa fa-calendar-o"></i> October 2, 2015</a>
-                                        </p>
-                                    </div>
-                                    <p class="intro">I&rsquo;m a linked post in the menu. You can add other posts by adding the following line to the frontmatter:
-menu = &quot;main&quot;  Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mauris nulla, vestibulum vel auctor sed, posuere eu lorem. Aliquam consequat augue ut accumsan mollis. Suspendisse malesuada sodales tincidunt. Vivamus sed erat ac augue bibendum porta sed id ipsum. Ut mollis mauris eget ligula sagittis cursus. Aliquam id pharetra tellus.</p>
-                                    <p class="read-more"><a href="http://p4davan.80x86.io/blog/2015/10/02/linked-post/" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
-                        
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <div class="image">
-                                      <a href="http://p4davan.80x86.io/blog/2015/08/03/hugo-is-for-lovers/">
-                                          
-                                          <img src="http://p4davan.80x86.io/img/banners/banner-3.jpg" class="img-responsive" alt="">
-                                          
-                                      </a>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="http://p4davan.80x86.io/blog/2015/08/03/hugo-is-for-lovers/">Hugo is for lovers</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          
-                                          
-                                          
-                                          in <a href="http://p4davan.80x86.io/categories/pseudo">pseudo</a>
-                                          
-                                          
-
-                                        </p>
-                                        <p class="date-comments">
-                                            <a href="http://p4davan.80x86.io/blog/2015/08/03/hugo-is-for-lovers/"><i class="fa fa-calendar-o"></i> August 3, 2015</a>
-                                        </p>
-                                    </div>
-                                    <p class="intro">Step 1. Install Hugo Goto hugo releases and download the appropriate version for your os and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at installing hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</p>
-                                    <p class="read-more"><a href="http://p4davan.80x86.io/blog/2015/08/03/hugo-is-for-lovers/" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
                         
 
-                        <ul class="pager">
-                            
-                            <li class="previous disabled"><a href="#">&larr; Newer</a></li>
-                            
-
-                            
-                            <li class="next disabled"><a href="#">Older &rarr;</a></li>
-                            
-                        </ul>
                     </div>
                     
 
@@ -399,6 +408,7 @@ Follow the following steps:
 
                 </div>
                 
+
             </div>
             
         </div>
