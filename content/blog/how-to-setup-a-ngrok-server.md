@@ -3,7 +3,7 @@ categories = ["tuts"]
 date = "2017-06-11T23:15:57+08:00"
 tags = ["ngrok", "centos"]
 title = "如何自己架设一个ngrok服务端"
-
+banner = "img/blog/2017/06/11/ngrok.png"
 +++
 
 本文以CentOS系统为例,其它Linux发行版也可参考.
