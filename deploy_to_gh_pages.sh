@@ -14,7 +14,7 @@
 #     # the makefile does all the publishing and is explained below.
 #     #make publish
 #     cd /d/project/p4davan/p4davan
-#     ./publish_to_ghpages.sh
+#     ./deploy_to_gh_pages.sh
 # fi
 
 DIR=$(dirname "$0")
