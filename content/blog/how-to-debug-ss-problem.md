@@ -6,11 +6,12 @@ categories = ["padavan"]
 banner = "img/banners/kuaishangche.jpg"
 +++
 
-## 0.不工作的具体表现
+## 0.不能正常工作的具体表现
 
 1. 在开启了`Status Detection`的情况下,`Active SS Node`那里没有显示绿色的字样:`Working`
 2. 查看插件的Status页面, anti DNS pollution 显示黄色的`err`
 3. 打不开google或twitter等
+4. 在开启了`Status Detection`的情况下, $$ 不断重启.
 
 ## 1.检查配置
 
