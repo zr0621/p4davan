@@ -79,4 +79,13 @@ chkconfig ngrokd on
 /etc/init.d/ngrokd status
 ```
 
+## 3. 允许端口通过防火墙
+如果你启用了防火墙,比如centos 7自带的firewalld,
+
+执行以下命令允许ngrokd端口通过防火墙:
+```bash
+firewall-cmd --zone=public --add-port=4443/tcp --permanent
+firewall-cmd --reload
+```
+
 --EOF
