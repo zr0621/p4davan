@@ -14,10 +14,6 @@ var get_base_url = function(mirror_id) {
   var download_fw=function (fw_pid, fw_ver) {
     var base_url = get_base_url(cur_mirror_id);
     var url = base_url + "/" + fw_pid + "/" + fw_ver + ".trx";
-    if (top.window.location.hostname == "p4davan.80x86.io") {
-      base_url = base_url_gh;
-      url = base_url + "/down/rom/" + fw_pid + "/" + fw_ver + ".trx";
-    }
     var link=document.createElement('a');
     link.style.display = "none";
     document.body.appendChild(link);
