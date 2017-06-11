@@ -6,6 +6,12 @@ title = "如何自己架设一个ngrok服务端"
 banner = "img/blog/2017/06/11/ngrok.png"
 +++
 
+## 前言
+
+> 用过我MOD版的固件的都会发现, 在ngrok那里有两个程序可以切换,一个是ngrok-c, 另一个是ngrok-libev.
+> 从实际使用来看, ngrok-libev 占用的资源更少,效率更高. 这也是我一直在使用的.
+> 但是ngrok 官方源码是不支持 ngrok-libev 客户端的. 所以我得不能直接 yum install xxxx 来安装ngrok, 要自己编译.
+
 本文以CentOS系统为例,其它Linux发行版也可参考.
 
 首先你得有一个服务器或vps.
