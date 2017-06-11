@@ -1,7 +1,7 @@
 +++
 title = "ss不工作怎么排查问题"
 date = "2017-06-11T16:30:53+08:00"
-tags = []
+tags = ["ss", "problem", "debug"]
 categories = ["padavan"]
 banner = "img/banners/kuaishangche.jpg"
 +++
