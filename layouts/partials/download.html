@@ -27,6 +27,8 @@
             <option value="PSG1218-256M">PSG1218-256M</option>
             <option value="YOUKU-L1">YOUKU-L1</option>
         </select>
+        <label for="fw_ver"><h3 style="margin-bottom: 10px;">当前版本:</h3></label>
+        <input class="form-control" type="text" readonly name="fw_ver" id="fw_ver" value="" placeholder="version">
           </div>
         </div>
       </section>
@@ -35,11 +37,13 @@
       <section>
         <div class="form-group row">
         <div class="col-xs-4">
-        <h3 style="margin-bottom: 10px;">点击下载：</h3>
+        <h3 style="margin-bottom: 40px;">点击下载：</h3>
         <ul class="download">
           <li class="download"><a class="buttons" id="download_fw" href="javascript:void(0);" title="">choose a router</a></li>
+          <li class="download"><a class="buttons" id="download_md5sum" href="javascript:void(0);" title="md5sum">md5sum</a></li>
+          <li class="download"><a class="buttons" id="download_sign" href="javascript:void(0);" title="rsa signature">rsa signature</a></li>
+          <li class="download"><a class="buttons" id="download_changelog" href="javascript:void(0);" title="changelog">changelog</a></li>
         </ul>
-        <input class="form-control" type="text" readonly name="fw_ver" id="fw_ver" value="" placeholder="version">
     </div>
   </div>
       </section>
