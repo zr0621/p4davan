@@ -1,7 +1,7 @@
 $(function(){
   var all_products = new Array("NEWIFI-D1", "NEWIFI-Y1", "PSG1218-K2", "PSG1218-256M", "YOUKU-L1");
   var base_url_mirror = ["http://router.mirror1.80x86.io:8088",
-  "https://github.com/ihacklog/p4davan-fw/raw/master",
+  "https://github.com/ihacklog/p4davan-fw/raw/master/down/rom",
   "http://files.80x86.io/router/rom"
 ];
 var cur_mirror_id = 0;
