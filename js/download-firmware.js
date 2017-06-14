@@ -12,13 +12,29 @@ var get_base_url = function(mirror_id) {
     return base_url;
 };
 
-  var download_fw=function (fw_pid, fw_ver) {
+  var download_fw=function (fw_pid, fw_ver, dld_type) {
     var base_url = get_base_url(cur_mirror_id);
-    var url = base_url + "/" + fw_pid + "/" + fw_ver + ".trx";
+    var file_ext = '';
+    switch(dld_type) {
+      case 'fw':
+      file_ext = '.trx';
+      break;
+      case 'md5sum':
+      file_ext = '.trx.md5sum.txt';
+      break;
+      case 'sign':
+      file_ext = '.trx.sign.txt';
+      break;
+      case 'changelog':
+      file_ext = '.changelog.txt';
+      break;
+    }
+    var url = base_url + "/" + fw_pid + "/" + fw_ver + file_ext;
     var link=document.createElement('a');
     link.style.display = "none";
     document.body.appendChild(link);
     link.href=url ;
+    link.download = url;
     link.click();
   };
   var d1_ver = '';
@@ -26,13 +42,14 @@ var get_base_url = function(mirror_id) {
   var k2_ver = '';
   var get_rom_release=function(product_id) {
     $.get('/firmware/release/' + product_id + '.txt', function(version){
+      $('#fw_ver').val(version.replace(product_id+'_', ''));
       $btn = $('#download_fw');
       $btn.text(product_id);
-      $('#fw_ver').val(version.replace(product_id+'_', ''));
       $btn.attr('title', version);
-      $btn.bind('click', function(){
-        download_fw(product_id, version);
-      });
+      $btn.bind('click', function(){ download_fw(product_id, version, 'fw'); });
+      $('#download_md5sum').bind('click', function(){ download_fw(product_id, version, 'md5sum'); });
+      $('#download_sign').bind('click', function(){ download_fw(product_id, version, 'sign'); });
+      $('#download_changelog').bind('click', function(){ download_fw(product_id, version, 'changelog'); });
     });
   }
 
