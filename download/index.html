@@ -176,13 +176,12 @@
 
   <div class="row col-md-offset-2">
     <div class="col-md-8">
-
       <section>
         
       </section>
     </div>
 
-    <div class="col-md-5" style="margin: 20px 0;">
+    <div class="col-md-5" style="margin: 0;">
       <section>
         <div class="form-group row">
           <div class="col-xs-8">
@@ -192,23 +191,32 @@
                     <option value="1">Github [US]</option>
                     <option value="2">80x86.io [JP]</option>
                   </select>
+
+
+        <h3 style="margin-bottom: 10px;">选择路由器型号：</h3>
+        <select class="form-control" id="sel_device">
+            <option value="NEWIFI-D1">NEWIFI-D1</option>
+            <option value="NEWIFI-Y1">NEWIFI-Y1</option>
+            <option value="PSG1218-K2">PSG1218-K2</option>
+            <option value="PSG1218-256M">PSG1218-256M</option>
+            <option value="YOUKU-L1">YOUKU-L1</option>
+        </select>
           </div>
         </div>
       </section>
     </div>
 
-    <div class="col-md-6" style="margin: 20px 0;">
       <section>
-        <h3 style="margin-bottom: 10px;">选择路由器型号：</h3>
+        <div class="form-group row">
+        <div class="col-xs-4">
+        <h3 style="margin-bottom: 10px;">点击下载：</h3>
         <ul class="download">
-          <li class="download"><a class="buttons" id="NEWIFI-D1" href="javascript:void(0);" title="NEWIFI-D1">NEWIFI-D1</a></li>
-          <li class="download"><a class="buttons" id="NEWIFI-Y1" href="javascript:void(0);" title="NEWIFI-Y1">NEWIFI-Y1</a></li>
-          <li class="download"><a class="buttons" id="PSG1218-K2" href="javascript:void(0);" title="PSG1218-K2">PSG1218-K2</a></li>
-          <li class="download"><a class="buttons" id="PSG1218-256M" href="javascript:void(0);" title="PSG1218-256M">K2-256M RAM</a></li>
-          <li class="download"><a class="buttons" id="YOUKU-L1" href="javascript:void(0);" title="YOUKU-L1">YOUKU-L1</a></li>
+          <li class="download"><a class="buttons" id="download_fw" href="javascript:void(0);" title="">choose a router</a></li>
         </ul>
-      </section>
+        <input class="form-control" type="text" readonly name="fw_ver" id="fw_ver" value="" placeholder="version">
     </div>
+  </div>
+      </section>
 
   </div>
   
