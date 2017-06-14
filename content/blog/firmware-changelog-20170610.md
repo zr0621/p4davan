@@ -27,6 +27,6 @@ http://router.mirror1.80x86.io:8088/beta/?C=S&O=D
 8. simple-obfs: upgrade to 0.0.3-1
 9. xkcptun: upgrade to Commits on Jun 9, 2017
 10. dnsmasq 更新至最新的 2.77 (@see http://www.thekelleys.org.uk/dnsmasq/CHANGELOG)
-11. PSG1218-K2 , PSG1218-K2-256M: fix LED problem.(back to purple)
+11. PSG1218-K2 , PSG1218-256M: fix LED problem.(back to purple)
 12. 增加 curl 7.54.0 (K2 8M固件没有)
 13. transmission 升级到最新版 2.92
