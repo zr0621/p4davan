@@ -44,12 +44,19 @@ var get_base_url = function(mirror_id) {
     $.get('/firmware/release/' + product_id + '.txt', function(version){
       $('#fw_ver').val(version.replace(product_id+'_', ''));
       $btn = $('#download_fw');
+      $md5 = $('#download_md5sum');
+      $sign = $('#download_sign');
+      $changelog = $('#download_changelog');
       $btn.text(product_id);
       $btn.attr('title', version);
+      $btn.unbind('click');
+      $md5.unbind('click');
+      $sign.unbind('click');
+      $changelog.unbind('click');
       $btn.bind('click', function(){ download_fw(product_id, version, 'fw'); });
-      $('#download_md5sum').bind('click', function(){ download_fw(product_id, version, 'md5sum'); });
-      $('#download_sign').bind('click', function(){ download_fw(product_id, version, 'sign'); });
-      $('#download_changelog').bind('click', function(){ download_fw(product_id, version, 'changelog'); });
+      $md5.bind('click', function(){ download_fw(product_id, version, 'md5sum'); });
+      $sign.bind('click', function(){ download_fw(product_id, version, 'sign'); });
+      $changelog.bind('click', function(){ download_fw(product_id, version, 'changelog'); });
     });
   }
 
