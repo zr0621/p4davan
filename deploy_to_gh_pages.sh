@@ -64,7 +64,7 @@ echo -e "\033[0;32mPush source repo.\033[0m"
 $GIT_CMD push origin master
 
 echo -e "\033[0;32mPush gh-pages repo.\033[0m"
-$GIT_CMD push origin gh-pages
+$GIT_CMD push origin gh-pages -f
 
 # Come Back
 cd $DIR

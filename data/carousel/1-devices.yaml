@@ -4,7 +4,7 @@ description: >
   <ul class="list-style-none">
     <li>NEWIFI-D1</li>
     <li>NEWIFI-Y1</li>
-    <li>PSG1218-K2/PSG1218-K2-256M-RAM</li>
+    <li>PSG1218-K2/PSG1218-256M-RAM</li>
     <li>YOUKU-L1</li>
   </ul>
 image: "img/carousel/multi-devices.png"
