@@ -167,11 +167,33 @@ Please reboot router!
 如果你想从pb-boot刷我的固件,那么你只能先刷breed (迅雷时光机的breed可以)
 http://files.80x86.io/router/rom/bootloader/A3004NS/breed-mt7621-xunlei-timeplug.bin
 
-一般刷了pb-boot的都是刷了pandorabox的,所以你只能从pandorabox下面刷
-breed. 然后再从breed刷我的固件. 最后在padavan下面刷回官方uboot.
+一般刷了pb-boot的都是刷了pandorabox的,
+所以你只能从pandorabox下面刷breed. 注意要备份eeprom.
+然后再从breed刷我的固件(注意不能选公版, 要选0x40000的). 根据我以前的测试, 在3004的硬件上, breed-mt7621-xunlei-timeplug
+会在重启后直接到breed界面,而不是进系统, 因此也只有这个版本的breed才能完成这个任务. (因为reset gpio不符合,一般情况下不用ttl你是没法到breed界面的, 当然有人用什么breed enter可能也可以做到,反正我没用过什么breed enter),
+最后可以在breed下刷回官方uboot.  最后在padavan下面恢复之前备份的eeprom.
+
+为什么要这么做,你看了下面关于pandorabox和我的固件分区情况对比就知道了.
+根据群友提供的pandorabox的闪存分区如下图:
+
+![aaa](/img/blog/2017/06/25/pandorabox-a3004ns-flash-layer.jpg)
+
+我的固件的闪存分区:
+```bash
+[A3004NS /opt/home/admin]# cat /proc/mtd
+dev:    size   erasesize  name
+mtd0: 00020000 00010000 "Bootloader"
+mtd1: 00010000 00010000 "Config"
+mtd2: 00010000 00010000 "Factory"
+mtd3: 00143250 00010000 "Kernel"
+mtd4: 00d7cdb0 00010000 "RootFS"
+mtd5: 00100000 00010000 "Storage"
+mtd6: 00ec0000 00010000 "Firmware_Stub
+```
 
 ### 什么时候你的A3004NS固件会支持从pb-boot直刷?
-等吧,等有时间了再弄. 目前来说只支持原厂.
+我也不知道. 目前来说只支持原厂. 因为半年前我做固件的时候就是针对原厂直刷
+来设计的.
 
 ## 3. 关于固件背后的故事
 
