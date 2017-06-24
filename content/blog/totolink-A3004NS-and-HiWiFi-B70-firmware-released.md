@@ -1,7 +1,7 @@
 +++
-categories = []
+categories = ["padavan"]
 date = "2017-06-24T15:54:30+08:00"
-tags = []
+tags = ["firmware", "update", "A3004NS", "B70"]
 title = "Totolink A3004NS 和 HiWiFi B70 固件双车齐发"
 
 +++
@@ -150,6 +150,8 @@ Please reboot router!
 
 最后,备份eeprom. 这里不再复述.请参考我以前写的文章: http://80x86.io/post/command-to-backup-padavan-firmware-eeprom
 
+恢复mac地址的方法:同上面的B70的命令类似.自行操作下吧.
+
 注意事项:
 
 > 我有了解到有一个pb-boot是支持A3004NS的.
@@ -168,7 +170,7 @@ http://files.80x86.io/router/rom/bootloader/A3004NS/breed-mt7621-xunlei-timeplug
 一般刷了pb-boot的都是刷了pandorabox的,所以你只能从pandorabox下面刷
 breed. 然后再从breed刷我的固件. 最后在padavan下面刷回官方uboot.
 
-### 什么时候你的固件会支持从pb-boot直刷?
+### 什么时候你的A3004NS固件会支持从pb-boot直刷?
 等吧,等有时间了再弄. 目前来说只支持原厂.
 
 ## x. 关于固件的故事
