@@ -6,7 +6,7 @@
   <meta name="robots" content="all,follow">
   <meta name="googlebot" content="index,follow,snippet,archive">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ipsum</title>
+  <title>k2p官改固件或原厂固件下安装breed的方法</title>
   <meta name="author" content="" />
 
   
@@ -60,9 +60,9 @@
   <link rel="alternate" href="http://p4davan.80x86.io/index.xml" type="application/rss+xml" title="Padavan Firmware Mod by 荒野无灯">
 
   
-  <meta property="og:title" content="Ipsum" />
+  <meta property="og:title" content="k2p官改固件或原厂固件下安装breed的方法" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="/tags/ipsum//" />
+  <meta property="og:url" content="/blog/2017/06/19/k2p-stock-rom-install-breed-bootloader//" />
   <meta property="og:image" content="img/asus_logo.png" />
 
 </head>
@@ -81,9 +81,9 @@
         <div class="container">
             <div class="navbar-header">
                 <a class="navbar-brand home" href="http://p4davan.80x86.io/">
-                    <img src="http://p4davan.80x86.io/img/logo.png" alt="Ipsum logo" class="hidden-xs hidden-sm">
-                    <img src="http://p4davan.80x86.io/img/logo-small.png" alt="Ipsum logo" class="visible-xs visible-sm">
-                    <span class="sr-only">Ipsum - go to homepage</span>
+                    <img src="http://p4davan.80x86.io/img/logo.png" alt="k2p官改固件或原厂固件下安装breed的方法 logo" class="hidden-xs hidden-sm">
+                    <img src="http://p4davan.80x86.io/img/logo-small.png" alt="k2p官改固件或原厂固件下安装breed的方法 logo" class="visible-xs visible-sm">
+                    <span class="sr-only">k2p官改固件或原厂固件下安装breed的方法 - go to homepage</span>
                 </a>
                 <div class="navbar-buttons">
                     <button type="button" class="navbar-toggle btn-template-main" data-toggle="collapse" data-target="#navigation">
@@ -162,7 +162,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Ipsum</h1>
+                <h1>k2p官改固件或原厂固件下安装breed的方法</h1>
             </div>
         </div>
     </div>
@@ -171,59 +171,80 @@
 
         <div id="content">
             <div class="container">
+
                 <div class="row">
+
                     
 
-                    <div class="col-md-9" id="blog-listing-medium">
+                    <div class="col-md-9" id="blog-post">
 
+                        <p class="text-muted text-uppercase mb-small text-right">June 19, 2017</p>
+
+                        <div id="post-content">
+                          <p>首先确保开启了ssh 或 telnet, 然后任选一种方式登录进去控制台.
+(如果不知道开启, 查看帖子 <a href="http://www.right.com.cn/forum/thread-217088-1-1.html">http://www.right.com.cn/forum/thread-217088-1-1.html</a>)
+#后面的为实际命令</p>
+
+<pre><code class="language-bash">root@K2P:/#cd /tmp
+root@K2P:/tmp#opkg install http://downloads.openwrt.org/chaos_calmer/15.05/ramips/mt7621/packages/packages/wget_1.16.3-1_ramips_1004kc.ipk
+</code></pre>
+
+<p>安装成功应该可以看到有wget-ssl文件了</p>
+
+<pre><code class="language-bash">root@K2P:/tmp# ls /overlay/usr/bin/
+dbclient     dropbearkey  scp          ssh          wget-ssl
+</code></pre>
+
+<p>然后下载breed:</p>
+
+<pre><code class="language-bash">wget-ssl --no-check-certificate https://breed.hackpascal.net/breed-mt7621-phicomm-k2p.bin
+</code></pre>
+
+<p>下载完成后校对一下md5是不是 56d16166de9deb781bc18b3f8b7a7ee6 ,如果OK,继续下一步操作.</p>
+
+<pre><code class="language-bash">root@K2P:/tmp# md5sum breed-mt7621-phicomm-k2p.bin
+56d16166de9deb781bc18b3f8b7a7ee6  breed-mt7621-phicomm-k2p.bin
+</code></pre>
+
+<p>写入breed:</p>
+
+<pre><code class="language-bash">root@K2P:/tmp# cat /proc/mtd
+dev:    size   erasesize  name
+mtd0: 01000000 00010000 &quot;ALL&quot;
+mtd1: 00030000 00010000 &quot;Bootloader&quot;
+mtd2: 00010000 00010000 &quot;Config&quot;
+mtd3: 00010000 00010000 &quot;Factory&quot;
+mtd4: 00050000 00010000 &quot;permanent_config&quot;
+mtd5: 00f60000 00010000 &quot;firmware&quot;
+mtd6: 00c48b96 00010000 &quot;rootfs&quot;
+mtd7: 00200000 00010000 &quot;rootfs_data&quot;
+root@K2P:/tmp# mtd -r write /tmp/breed-mt7621-phicomm-k2p.bin Bootloader
+</code></pre>
+
+<p>写入成功的情况下会自动重启的.</p>
+
+                        </div>
                         
                         
-                        <section class="post">
-                            <div class="row">
-                                <div class="col-md-4">
-                                  <div class="image">
-                                      <a href="http://p4davan.80x86.io/blog/2015/10/10/migrate-from-jekyll/">
-                                          
-                                          <img src="http://p4davan.80x86.io/img/banners/banner-5.jpg" class="img-responsive" alt="">
-                                          
-                                      </a>
-                                  </div>
-                                </div>
-                                <div class="col-md-8">
-                                    <h2><a href="http://p4davan.80x86.io/blog/2015/10/10/migrate-from-jekyll/">Migrate from Jekyll</a></h2>
-                                    <div class="clearfix">
-                                        <p class="author-category">
-                                          
-                                          
-                                          
-                                          in <a href="http://p4davan.80x86.io/categories/lorem">lorem</a>
-                                          
-                                          
+                        <div id="comments">
+                            <div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'p4davan';
+    var disqus_identifier = 'http:\/\/p4davan.80x86.io\/blog\/2017\/06\/19\/k2p-stock-rom-install-breed-bootloader\/';
+    var disqus_title = 'k2p官改固件或原厂固件下安装breed的方法';
+    var disqus_url = 'http:\/\/p4davan.80x86.io\/blog\/2017\/06\/19\/k2p-stock-rom-install-breed-bootloader\/';
 
-                                        </p>
-                                        <p class="date-comments">
-                                            <a href="http://p4davan.80x86.io/blog/2015/10/10/migrate-from-jekyll/"><i class="fa fa-calendar-o"></i> October 10, 2015</a>
-                                        </p>
-                                    </div>
-                                    <p class="intro">Move static content to static Jekyll has a rule that any directory not starting with _ will be copied as-is to the _site output. Hugo keeps all static content under static. You should therefore move it all there. With Jekyll, something that looked like
-▾ &lt;root&gt;/ ▾ images/ logo.png  should become
-▾ &lt;root&gt;/ ▾ static/ ▾ images/ logo.png  Additionally, you&rsquo;ll want any files that should reside at the root (such as CNAME) to be moved to static.</p>
-                                    <p class="read-more"><a href="http://p4davan.80x86.io/blog/2015/10/10/migrate-from-jekyll/" class="btn btn-template-main">Continue reading</a>
-                                    </p>
-                                </div>
-                            </div>
-                        </section>
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        </div>
                         
 
-                        <ul class="pager">
-                            
-                            <li class="previous disabled"><a href="#">&larr; Newer</a></li>
-                            
-
-                            
-                            <li class="next disabled"><a href="#">Older &rarr;</a></li>
-                            
-                        </ul>
                     </div>
                     
 
@@ -383,6 +404,7 @@
 
                 </div>
                 
+
             </div>
             
         </div>
