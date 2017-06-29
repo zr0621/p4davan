@@ -10,6 +10,11 @@ keywords = ["FAQ","How do I","questions","what if"]
 * @author: 荒野无灯
 * @date: 2017-05-12
 
+padavan官方 教程：
+
+- 如何启用Entware: https://bitbucket.org/padavan/rt-n56u/wiki/EN/HowToConfigureEntware
+- padavan必备技巧： https://bitbucket.org/padavan/rt-n56u/wiki/EN/CommonTips
+
 ## 0.这个固件的默认管理员用户名和密码是什么
 `admin\admin`is a default credentials for WebUI and SSH.
 
