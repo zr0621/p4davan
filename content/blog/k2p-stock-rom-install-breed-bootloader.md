@@ -10,6 +10,12 @@ title = "k2p官改固件或原厂固件下安装breed的方法"
 (如果不知道开启, 查看帖子 http://www.right.com.cn/forum/thread-217088-1-1.html)
 #后面的为实际命令
 
+
+这里我原来教程是下载的breed下载站的https://breed.hackpascal.net/breed-mt7621-phicomm-k2p.bin ,
+但是官方时常会更新,因此我换成我的备份链接了.
+我的站点暂时没有弄https,因此安装wget-ssl不是必要的.只是之前教程的一部分.
+这里为了方便有些人可能想下载官方的,因此安装wget-ssl的部分继续保留了.
+
 ```bash
 root@K2P:/#cd /tmp
 root@K2P:/tmp#opkg install http://downloads.openwrt.org/chaos_calmer/15.05/ramips/mt7621/packages/packages/wget_1.16.3-1_ramips_1004kc.ipk
@@ -23,14 +29,15 @@ dbclient     dropbearkey  scp          ssh          wget-ssl
 
 然后下载breed:
 ```bash
-wget-ssl --no-check-certificate https://breed.hackpascal.net/breed-mt7621-phicomm-k2p.bin
+wget-ssl --no-check-certificate http://files.80x86.io/router/rom/bootloader/K2P/breed-mt7621-phicomm-k2p.bin
 ```
 
-下载完成后校对一下md5是不是 56d16166de9deb781bc18b3f8b7a7ee6 ,如果OK,继续下一步操作.
+下载完成后校对一下md5是不是 4864e1c72c9bf4f2ab5983dc9862a882 ,如果OK,继续下一步操作.
 ```bash
 root@K2P:/tmp# md5sum breed-mt7621-phicomm-k2p.bin
-56d16166de9deb781bc18b3f8b7a7ee6  breed-mt7621-phicomm-k2p.bin
+4864e1c72c9bf4f2ab5983dc9862a882  breed-mt7621-phicomm-k2p.bin
 ```
+(如果是下载的breed官方的链接,相应的md5与官方公布的一致即可)
 
 写入breed:
 ```bash
