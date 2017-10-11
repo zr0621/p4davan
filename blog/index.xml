@@ -27,7 +27,7 @@
       <pubDate>Mon, 19 Jun 2017 21:48:18 +0800</pubDate>
       
       <guid>http://p4davan.80x86.io/blog/2017/06/19/k2p-stock-rom-install-breed-bootloader/</guid>
-      <description>首先确保开启了ssh 或 telnet, 然后任选一种方式登录进去控制台. (如果不知道开启, 查看帖子 http://www.right.com.cn/forum/thread-217088-1-1.html) #后面的为实际命令 root@K2P:/#cd /tmp root@K2P:/tmp#opkg install http://downloads.openwrt.org/chaos_calmer/15.05/ramips/mt7621/packages/packages/wget_1.16.3-1_ramips_1004kc.ipk 安装成功应该可以看到有wge</description>
+      <description>首先确保开启了ssh 或 telnet, 然后任选一种方式登录进去控制台. (如果不知道开启, 查看帖子 http://www.right.com.cn/forum/thread-217088-1-1.html) #后面的为实际命令 这里我原来教程是下载的breed下载站</description>
     </item>
     
     <item>
